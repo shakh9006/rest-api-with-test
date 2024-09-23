@@ -3,6 +3,7 @@ import { prisma } from "./database/prisma.client";
 import generateServer from "./server";
 
 async function main() {
+  console.log("in starter main");
   const app = generateServer();
   const PORT = process.env.PORT || 8001;
   app.listen(PORT, () => {
