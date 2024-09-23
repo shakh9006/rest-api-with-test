@@ -16,21 +16,21 @@ services:
     command: postgres
     restart: always
 
-#  main:
-#    container_name: main
-#    build:
-#      context: .
-#    env_file:
-#      - .env
-#    volumes:
-#      - .:/app
-#      - /app/node_modules
-#    ports:
-#      - '8001:8001'
-#    command: sh -c "npm run db:migrate && npm run db:push && npm run seed && npm run dev"
-#    depends_on:
-#      - postgres
-#    restart: always
+  main:
+    container_name: main
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '8001:8001'
+    command: sh -c "npm run db:migrate && npm run db:push && npm run seed && npm run dev"
+    depends_on:
+      - postgres
+    restart: always
 
 volumes:
   pgdata:
